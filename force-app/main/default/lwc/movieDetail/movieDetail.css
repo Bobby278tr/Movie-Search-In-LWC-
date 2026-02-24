@@ -1,13 +1,13 @@
-.movie-poster{
-    max-width: 300px;
-    border: 4px solid white;
-    border-radius: 5px;
-}
 .container{
     background-color: black;
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 1rem;
+}
+.movie-poster img{
+    max-width: 300px;
+    border: 4px solid white;
+    border-radius: 5px;
 }
 .movie-Tile{
     font-size: 2rem;
