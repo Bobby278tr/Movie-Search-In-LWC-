@@ -30,6 +30,7 @@ export default class MovieDetail extends LightningElement {
     handleMessage(message){
         let movieId = message.moveId;
         console.log('Movie Id', movieId);
+        this.fetchMovieDetail(movieId);
     }
 
     unSubscribeToMessageChannel(){
@@ -37,6 +38,13 @@ export default class MovieDetail extends LightningElement {
             unsubscribe(this.subscription);
             this.subscription = null;
         }
+    }
+
+    async fetchMovieDetail(movieId){
+        let url = `https://www.omdbapi.com/?i=${movieId}&plot=full&apikey=b0a83250`;
+        const res = await fetch(url);
+        const data = await res.json();
+        console.log('Movie Detail Output', data);
     }
     
 }
