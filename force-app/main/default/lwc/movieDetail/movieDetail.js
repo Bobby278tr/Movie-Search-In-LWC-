@@ -7,6 +7,8 @@ export default class MovieDetail extends LightningElement {
     messageContext;
     subscription = null;
     movieId='';
+    loadComponent = false;
+    movieDetails={};
 
     connectedCallback(){
         this.subscribeToMessageChannel();
@@ -45,6 +47,8 @@ export default class MovieDetail extends LightningElement {
         const res = await fetch(url);
         const data = await res.json();
         console.log('Movie Detail Output', data);
+        this.loadComponent = true;
+        this.movieDetails = data;
     }
     
 }
